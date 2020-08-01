@@ -1,1 +1,1 @@
-This is the solution for problem statement no. AR256 given by Mininstry of Textiles
+This is the solution for problem statement no. AR256 given by Mininstry of Textiles in SIH-2020. Here we are predicting the future price trend of cotton region wise on the basic of past year's data and suggesting a proper pricing model for the same.
