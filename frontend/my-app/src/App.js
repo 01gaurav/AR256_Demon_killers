@@ -1,25 +1,47 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useContext, useReducer} from 'react';
+import {BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
+//import Button from 'react-bootstrap/Button';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
-function App() {
+
+
+
+import login from './pages/Login1';
+import signup from './pages/Signup';
+import logout from './pages/Logout';
+
+import Store from './store/store';
+import rootReducer from './rootReducer/rootReducer';
+
+
+const  App = () => {
+   const initState = useContext(Store);
+   const [state, dispatch] = useReducer(rootReducer, initState);
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Store.Provider value={{state,dispatch}} >
+      <div className="App">
+      <Router>
+        
+        <Switch>
+          {/* <Route exact path = '/home' component ={home} /> */}
+          <Route path = '/login' component = {login} />
+          <Route path = '/logout' component = {logout} />
+          <Route path = '/signup' component = {signup} />
+          
+          
+          {/* <Route path = '/logout' component = {logout} /> */}
+          
+        </Switch>
+      </Router>
+      </div>
+    </Store.Provider>  
+    </>
   );
 }
 

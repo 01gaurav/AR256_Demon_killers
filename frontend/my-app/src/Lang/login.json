@@ -1,0 +1,27 @@
+{
+    "English": {
+        "wel": "welcome",
+        "name": "Name:",
+        "email": "Email address:",
+        "pass": "Password",
+        "signupb": "Sign-Up",
+        "noacc": "If you do not have account, please ",
+        "clkh":"Click here",
+        "forpass": "Forgot Password",
+        "loginb": "Login",
+        "copass":"Confirm Password"
+
+    },
+    "Hindi": {
+        "wel": "स्वागत हे",
+        "name": "नाम",
+        "email": "ईमेल ",
+        "pass": "पासवर्ड",
+        "signupb": "साइन अप करें",
+        "noacc": "यदि आपके पास खाता नहीं है, तो कृपया ",
+        "clkh": "यहां क्लिक करें",
+        "forpass": "पासवर्ड भूल गए",
+        "loginb": "लॉग इन करें",
+        "copass": "पासवर्ड की पुष्टि कीजिये"
+    }
+}
