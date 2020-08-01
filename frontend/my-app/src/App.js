@@ -7,13 +7,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 
-import NavBar from './util/NavBar';
 
 
 import login from './pages/Login1';
 import signup from './pages/Signup';
 import logout from './pages/Logout';
-import Home from './pages/Home';
 
 import Store from './store/store';
 import rootReducer from './rootReducer/rootReducer';
@@ -29,14 +27,13 @@ const  App = () => {
     <Store.Provider value={{state,dispatch}} >
       <div className="App">
       <Router>
-        <NavBar  />
+        
         <Switch>
           {/* <Route exact path = '/home' component ={home} /> */}
           <Route path = '/login' component = {login} />
           <Route path = '/logout' component = {logout} />
           <Route path = '/signup' component = {signup} />
           
-          <Route exact path = '/' component = {Home} />
           
           {/* <Route path = '/logout' component = {logout} /> */}
           

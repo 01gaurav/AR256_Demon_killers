@@ -1,0 +1,89 @@
+.signup-head{
+    font-size: 50px;
+}
+
+.login-head{
+    font-size: 50px;
+}
+/* .container{
+    
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 50px;
+} */
+/* .row{
+    width:90vw;
+} */
+
+.map-cursor{
+    cursor: pointer;
+}
+.statedis{
+    font-size: 17px;
+}
+.button-state{
+    padding: 5px;
+    
+    
+}
+
+.button-state-in{
+    padding: 3px;
+    width: 200px;
+    border-radius: 20px;
+}
+
+.option-style{
+        width: 200px;
+        height: 30px;
+        border: 1px solid #999;
+        font-size: 18px;
+        color: #1c87c9;
+        background-color: #eee;
+        border-radius: 5px;
+        box-shadow: 4px 4px #ccc;
+}
+
+.error{
+    color: red;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+.selection{
+    align-content: center;
+}
+
+.form_pred{
+    margin-right: 0px;
+}
+
+@media screen and (max-width: 900px){
+    .form_pred {
+        width: auto;
+    }
+}
+
+
+.india_map{
+    height: 428;
+    width: 400;
+}
+
+@media screen and (max-width: 410px){
+    .india_map{
+        width: 90vw;
+    }
+}
+
+.pred-main{
+    overflow-x: hidden;
+}
+
+.preddec{
+    width: 80vw;
+    margin-left: 10vw;
+    font-size: 20px;
+    justify-content: center;
+}

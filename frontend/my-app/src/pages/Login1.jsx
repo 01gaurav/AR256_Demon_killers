@@ -13,7 +13,7 @@ import Avatar from '../images/avatar.svg';
 import LoginMobile from '../images/login-bg.svg';
 import Wavebg from '../images/wave.png'; 
 
-import Footer from '../util/Footer';
+
 
 import CONTENT from '../Lang/login.json';
 
@@ -169,7 +169,7 @@ const Login = () =>{
                     
                 </div>
             </div>
-            <Footer />
+            
         </>
     );
 }

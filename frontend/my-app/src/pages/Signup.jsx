@@ -17,7 +17,6 @@ import Wavebg from '../images/wave.png';
 
 import './pages.css';
 
-import Footer from '../util/Footer';
 
 import CONTENT from '../Lang/login.json';
 
@@ -344,7 +343,7 @@ const Signup = () => {
                         
             )}
 
-            <Footer />
+           
             
         </>
     );
