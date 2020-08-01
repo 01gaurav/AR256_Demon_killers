@@ -20,4 +20,8 @@ urlpatterns = [
     path('test/', test),
     path('signUp/', signup),
     path('sendEmail/', sendEmail),
+    path('sendEmail1/', sendEmailFP),
+    path('FP/', FP),
+    path('Query/', Query),
+    path('login/', login),
 ]

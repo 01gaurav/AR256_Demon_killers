@@ -73,3 +73,57 @@ def sendEmail(request):
             return JsonResponse({"status": "an error occured :(","e":e},status=500)
     else:
         return JsonResponse({"status":'already registered'},status=200)
+@api_view(['POST'])
+def sendEmailFP(request):
+    q=request.data
+    x=record.find_one({"_id":q['email']})
+    if(x!=None):
+        try:
+            otp=generateOTP()
+            print(request.data['email'],otp)
+            # sendEmail(request.data['email'],otp)
+            send_mail('Verificaton for signup', otp, 'sihkkr2020@gmail.com', [request.data['email']])
+            return JsonResponse({"status":hashlib.md5(otp.encode()).hexdigest()},status=200)
+        except Exception as e:
+            return JsonResponse({"status": "an error occured :(","e":e},status=500)
+    else:
+        return JsonResponse({"status":'not registerd'},status=200)
+
+
+@api_view(['POST'])
+def FP(request):
+    q=request.data
+    record.update_many( {"_id":q['email']}, { "$set":{  "password":q['password']} } ) 
+    return JsonResponse({"status":'done'},status=200)
+
+
+
+@api_view(['POST'])
+def Query(request):
+    q=request.data
+    y=request.data['token']
+    y=jwt.decode(y, 'mks')
+    y1=record.find_one({"_id":y['email']})
+    z=y1['query']
+    z.append([q['msg'],q['name'],q['email'],datetime.datetime.now().isoformat()])
+    record.update_many( {"_id":y['email']}, { "$set":{  "query":z} } ) 
+    return JsonResponse({"status":'done'},status=200)
+
+
+
+
+
+@api_view(['POST'])
+def login(request):
+    try:
+        q=request.data
+        print(q)
+        y=jwt.encode({"email":q['email']},"mks")
+        x=record.find_one({"_id":q['email'],"password":q['password']})
+        print(y.decode('UTF-8'),x,q,jwt.decode(y.decode('UTF-8'), 'mks'))
+        if(x!=None):
+            return JsonResponse({"status": "True","token":y.decode('UTF-8')},status=200)
+        else:
+            return JsonResponse({"status": "False"},status=200)
+    except Exception as e:
+        return JsonResponse({"status": "an error occured :(","e":e},status=500)
